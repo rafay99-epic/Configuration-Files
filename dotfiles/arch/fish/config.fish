@@ -1,25 +1,12 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-# this function will contain all of the designed elements from the Owner Abdul Rafay 
-# printf  "\e[92m"
-# printf "======================================================================================================================================================\n"
-# printf "\e[33m"
-# figlet  -c -w 150 -f standard "Terminal Welcome You"
-# printf "\e[94m"
-# figlet  -c -w 150 -f  small "Scarlet Speedester"
-# printf "\e[92m"
-# printf "======================================================================================================================================================\n"
-# printf "\e[0m"
-    printf "===================================================================================================================\n"
-    figlet -c -w 120  "Scarlet  Speedester"
-    printf "===================================================================================================================\n"
-#fm6000 -c random  -o Debian -n -m 8 -g 8  -l 25 -r
-#echo " "
-neofetch
+fm6000 -c blue -o "Arch Linux" -de "Plasma-KDE" -m 9 -g 9 -l 25
 
-set_color magenta;
-
+# Different alias for fish shell
+alias ls="lsd"
+alias cat="ccat"
+alias rm="rm -ir"
 #this will remove the gredding message when fish shell is launched
 set fish_greeting
 
