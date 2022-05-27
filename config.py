@@ -1,8 +1,12 @@
-from sys import platform
+# Libaries for running
+import sys
+import subprocess
 import os
 import shutil
+from sys import platform
 from shutil import SameFileError
-import sys
+
+
 
 def welcome():
     print(""" 
@@ -27,10 +31,15 @@ def place():
     ---------------------------------
         Placing files...
     ---------------------------------""")
-    source_dir = "~/Documents/Personal Projects/config-files/dotfiles"
-    destination_dir = "~/Documents"
+    # Need to add mv command for linux to work
+    Pacman= subprocess.run('mv', shell=True, capture_output=True) 
+    print(Pacman.stdout.decode())
+    
+    
+    # source_dir = "~/Documents/Personal Projects/config-files/dotfiles"
+    # destination_dir = "~/Documents"
 
-    shutil.copytree(source_dir, destination_dir)
+    # shutil.copytree(source_dir, destination_dir)
     # shutil.copytree('dotfiles/arch/alacritty', '~/Documents')
 
 def running():
