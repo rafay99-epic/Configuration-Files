@@ -11,7 +11,7 @@ from shutil import SameFileError
 def welcome():
     print(""" 
     ----------------------------------------------------
-                Welome to config files Repo
+                Welome To Configuration Repo
                 
                 Author: Abdul Rafay
                 Github: rafay99
@@ -22,8 +22,7 @@ def goodbye():
     print("""
     ----------------------------------------------------
                     Thank you!!
-
-        Congratulation.. Your Files are being Placed..
+    Congratulation... YOur Config Files are being Placed..
     ----------------------------------------------------""")
 
 def place():
@@ -31,16 +30,16 @@ def place():
     ---------------------------------
         Placing files...
     ---------------------------------""")
-    # Need to add mv command for linux to work
-    Pacman= subprocess.run('mv', shell=True, capture_output=True) 
-    print(Pacman.stdout.decode())
-    
-    
-    # source_dir = "~/Documents/Personal Projects/config-files/dotfiles"
-    # destination_dir = "~/Documents"
 
-    # shutil.copytree(source_dir, destination_dir)
-    # shutil.copytree('dotfiles/arch/alacritty', '~/Documents')
+    # Moving Wallpapers
+    wallpaper_folder= subprocess.run('cp -r wallpapers ~/Pictures' ,shell=True, capture_output=True)
+    print(wallpaper_folder.stdout.decode())
+    # copyiong file from directory to another folder
+    dotfile_config_folder= subprocess.run('cd dotfiles && cp -r alacritty awesome fish kitty starship.toml  ~/.config', shell=True, capture_output=True)
+    print(dotfile_config_folder.stdout.decode())
+    dotfile_home_folder= subprocess.run('cd dotfiles && cp -r .zshrc   ~/ ', shell=True, capture_output=True)
+    print(dotfile_home_folder.stdout.decode())
+    
 
 def running():
     welcome()
